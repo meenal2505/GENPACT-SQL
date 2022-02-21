@@ -1,0 +1,86 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 CREATE TABLE Trainer_Info \
+(\
+  Trainer_Id char(20) primary key,\
+  Salutation char(7),\
+  Trainer_Name char(30),\
+  Trainer_Location char(30),\
+  Trainer_Track char(15),\
+  Trainer_Qualification char(100),\
+  Trainer_Experiance integer(11),\
+  Trainer_Email char(100),\
+  Trainer_Password char(20)\
+);\
+\
+CREATE TABLE Batch_Info\
+(\
+  Batch_Id char(20) primary key,\
+  Batch_Owner char(30),\
+  Batch_BU_Name	char(30)\
+);\
+\
+CREATE TABLE Module_Info\
+(\
+  Module_Id	char(20) primary key,\
+  Module_Name char(40),\
+  Module_Duration Integer(11)\
+);\
+\
+CREATE TABLE Associate_Info\
+(\
+  Associate_Id char(20) primary key,\
+  Salutation char(7),\
+  Associate_Name char(30),\
+  Associate_Location char(30),\
+  Associate_Track	char(15),\
+  Associate_Qualification char(200),\
+  Associate_Email char(100),\
+  Associate_Password char(20)\
+);\
+ \
+CREATE TABLE Questions\
+(\
+  Question_Id char(20) primary key,\
+  Module_Id	char(20),\
+  Question_Text	varchar(900)\
+);\
+\
+CREATE TABLE Associate_Status\
+(\
+  Associate_Id char(20) ,\
+  Module_Id	char(20),\
+  Batch_Id char(20),\
+  Trainer_Id char(20),\
+  Start_Date char(20),\
+  End_Date char(20)\
+ \
+);\
+\
+CREATE TABLE Trainer_Feedback\
+(\
+  Trainer_Id char(20) primary key,\
+  Question_Id char(20),\
+  Batch_Id char(20),\
+  Module_Id	char(20),\
+  Trainer_Rating Integer(11)\
+);\
+\
+CREATE TABLE Associate_Feedback \
+(\
+  Associate_Id char(20) primary key,\
+  Question_Id char(20),\
+  Module_Id	char(20),\
+  Associate_Rating Integer(11)\
+);\
+\
+CREATE TABLE Login_Details\
+(\
+  User_Id char(20) primary key,\
+  User_Password	char(20)\
+);}
