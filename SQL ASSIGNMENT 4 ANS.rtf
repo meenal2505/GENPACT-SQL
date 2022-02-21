@@ -35,5 +35,5 @@ join Associate_Status a on\
 bi.batch_id=a.Batch_Info;\
 \
 \
-SELECT t.Trainer_Id,Associate_id FROM GENPACT.Associate_Status a \
-right join Trainer_Info  t on a.Trainer_Info=Trainer_Id ;}
+SELECT t.Trainer_Id,Associate_id FROM Trainer_Info  t \
+left join GENPACT.Associate_Status a  on a.Trainer_Info=Trainer_Id ;}
